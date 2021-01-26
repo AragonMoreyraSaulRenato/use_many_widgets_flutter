@@ -4,9 +4,32 @@ class AvatarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Avatar Page'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Avatar Page'),
+          actions: [
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://mmm.vistoenpantalla.com/imagenes-productos/sudadera-gears-of-war-logo-negra-large2.jpg'),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 10.0),
+              child: CircleAvatar(
+                child: Text('SL'),
+                backgroundColor: Colors.brown,
+              ),
+            )
+          ],
+        ),
+        body: Center(
+          child: FadeInImage(
+            image: NetworkImage(
+                'https://static.wikia.nocookie.net/gearsofwar/images/6/63/Marcus_ArmoredG4Render.png/revision/latest?cb=20180806015117'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+          ),
+        ));
   }
 }
